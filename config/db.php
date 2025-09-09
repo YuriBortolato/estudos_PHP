@@ -8,7 +8,8 @@ $dbname = 'aula';
 $conn = new mysqli($host, $user, $pass, $dbname);
 
 if($conn->connect_error){
-    die('Error na conexão: '. $conn->connect_error);
-}else
+    die('Error na conexâo: '. $conn->connect_error);
+}
 
 $conn->set_charset('utf8');
+
