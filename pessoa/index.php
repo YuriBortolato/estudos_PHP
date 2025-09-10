@@ -27,7 +27,9 @@
                             <td>{$row['cpf']}</td>
                             <td>
                                 <a href='edit.php?id={$row['id']}' class='btn btn-info'>Editar</a>
-                                <a href='delete.php?id={$row['id']}' class='btn btn-danger'>Excluir</a>
+                                <a href='delete.php?id={$row['id']}' 
+                                onclick='return confirm(\"Deseja excluir?\")'
+                                class='btn btn-danger'>Excluir</a>
                             </td>
                         </tr>
                     ";
