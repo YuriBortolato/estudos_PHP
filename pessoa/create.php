@@ -12,7 +12,7 @@
         </div>
         <div class="mb-2">
             <label>CPF:</label>
-            <input type="text" name="cpf" class="form-control" required>
+            <input type="text" data-mask='000.000.000-00' name="cpf" class="form-control" required>
         </div>
         <div class="mb-2">
             <label>Email:</label>
@@ -20,23 +20,26 @@
         </div>
         <div class="mb-2">
             <label>CEP:</label>
-            <input type="text" name="cep" class="form-control" required>
+            <input type="text" id="cep" data-mask='00000-000' name="cep" class="form-control" required>
         </div>
         <div class="mb-2">
             <label>Endereço:</label>
-            <input type="text" name="endereco" class="form-control" required>
+            <input type="text" id="endereco" name="endereco" class="form-control" required>
         </div>
         <div class="mb-2">
             <label>Cidade:</label>
-            <input type="text" name="cidade" class="form-control" required>
+            <input type="text" id="cidade" name="cidade" class="form-control" required>
         </div>
         <div class="mb-2">
             <label>Estado:</label>
-            <input type="text" name="estado" class="form-control" required>
+            <input type="text" id="estado" name="estado" class="form-control" required>
         </div>
         <button class="btn btn-success" type="submit">Salvar</button>
     </form>
 </div>
+
+<script src="https://jsuites.net/v5/jsuites.js"></script>
+<script src="../js/script.js"></script>
 
 <?php 
     include '../include/footer.php'; 
