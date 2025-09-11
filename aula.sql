@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Set-2025 às 00:34
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.2
+-- Generation Time: Sep 11, 2025 at 02:57 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `aula`
+-- Database: `aula1`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pessoa`
+-- Table structure for table `pessoa`
 --
 
 CREATE TABLE `pessoa` (
@@ -37,10 +36,10 @@ CREATE TABLE `pessoa` (
   `endereco` varchar(255) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `estado` char(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `pessoa`
+-- Dumping data for table `pessoa`
 --
 
 INSERT INTO `pessoa` (`id`, `nome`, `email`, `cpf`, `cep`, `endereco`, `cidade`, `estado`) VALUES
@@ -48,25 +47,58 @@ INSERT INTO `pessoa` (`id`, `nome`, `email`, `cpf`, `cep`, `endereco`, `cidade`,
 (2, 'sdfsdfdfs22222', 'fasdfasd@SDFDFS', 'sdfasdfasdfasd', '34242', '34234', '23423', '34'),
 (3, 'dfasdfa', 'fasdfasd@SDFDFS', 'sdfasdfasdfasd', 'fasdfas', 'dfasd', 'dfasdfasdfa', 'sd');
 
+-- --------------------------------------------------------
+
 --
--- Índices para tabelas despejadas
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `ativo`) VALUES
+(2, 'dfsdf', 'sdfsdf@dfsdfs', '123456', 1);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `pessoa`
+-- Indexes for table `pessoa`
 --
 ALTER TABLE `pessoa`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `pessoa`
+-- AUTO_INCREMENT for table `pessoa`
 --
 ALTER TABLE `pessoa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
