@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2025 at 02:57 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Tempo de geração: 11/09/2025 às 22:47
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aula1`
+-- Banco de dados: `aula`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pessoa`
+-- Estrutura para tabela `catalogo`
+--
+
+CREATE TABLE `catalogo` (
+  `nome` varchar(255) NOT NULL,
+  `descricao` text DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `catalogo`
+--
+
+INSERT INTO `catalogo` (`nome`, `descricao`, `status`, `id`) VALUES
+('bebida', 'energetico, isotonico', 1, 1),
+('carnes', 'carne brancas e vermelhas', 1, 2),
+('doces', 'chocolate, biscoito', 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `pessoa`
 --
 
 CREATE TABLE `pessoa` (
@@ -39,7 +61,7 @@ CREATE TABLE `pessoa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pessoa`
+-- Despejando dados para a tabela `pessoa`
 --
 
 INSERT INTO `pessoa` (`id`, `nome`, `email`, `cpf`, `cep`, `endereco`, `cidade`, `estado`) VALUES
@@ -50,7 +72,32 @@ INSERT INTO `pessoa` (`id`, `nome`, `email`, `cpf`, `cep`, `endereco`, `cidade`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura para tabela `produto`
+--
+
+CREATE TABLE `produto` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `descricao` text DEFAULT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `quantidade` int(30) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `codigo` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome`, `descricao`, `preco`, `quantidade`, `status`, `codigo`) VALUES
+(1, 'energetico', 'monster', 7.50, 200, 1, '12A5X'),
+(2, 'Carne', 'fraudinha', 0.00, 1000, 1, '10R55F'),
+(3, 'Carne', 'tilapia', 0.00, 50, 1, '10R56F');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -62,43 +109,70 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `ativo`) VALUES
-(2, 'dfsdf', 'sdfsdf@dfsdfs', '123456', 1);
+(2, 'dfsdf', 'sdfsdf@dfsdfs', '123456', 1),
+(4, 'test', 'test@g', '123', 1),
+(5, 'tests', 'tests@g', '123', 1),
+(6, 'pato', 'pato@ggg', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `pessoa`
+-- Índices de tabela `catalogo`
+--
+ALTER TABLE `catalogo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `pessoa`
+-- AUTO_INCREMENT de tabela `catalogo`
 --
-ALTER TABLE `pessoa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
+ALTER TABLE `catalogo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `pessoa`
+--
+ALTER TABLE `pessoa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `produto`
+--
+ALTER TABLE `produto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
