@@ -1,14 +1,13 @@
-<?php
 
+  <?php
     session_start();
     //$_SESSION['LOGADO'] = TRUE;
     if(!isset($_SESSION['LOGADO'])){
         header('location: ../index.php');
         exit;
     }
+?> 
 
-
-?>
 
 
 <!DOCTYPE html>
@@ -40,10 +39,16 @@
           <a href="../usuario" class="nav-link">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a href="../dahsboard?logout=true" 
-            onclick='return confirm(\"Deseja sair do sistema?\")' 
+          <a href="../catalogo" class="nav-link">Catálogos</a>
+        </li>
+        <li class="nav-item">
+          <a href="../produto" class="nav-link">Produtos</a>
+        </li>
+        <li class="nav-item">
+            <a href="../dashboard?logout=true" 
+            onclick="return confirm('Deseja sair do sistema?')" 
             class="nav-link">
-            Sair
+           Sair
           </a>
         </li>
       </ul>
