@@ -1,6 +1,6 @@
 <?php
     $msg_class = 'alert-dark';
-    $msg = 'Bem vindo a Apple.';
+    $msg = 'Bem vindo ao Guarana.';  
     if(isset($_POST['email']) || isset($_POST['senha']) ){
         if($_POST['email'] == '' || $_POST['senha'] == ''){
             $msg_class = 'alert-danger';
@@ -50,7 +50,7 @@
 </head>
 <body>
     <form action="" method="post">
-        <img class="logo" src="./assets/logo.svg" alt="logo">
+        <img class="logo" src="./assets/GuaranaLogo.png" alt="logo">
         <div class="alert <?= $msg_class ?>"><?= $msg ?></div>
         <div class="form-floating mb-3">
             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -82,7 +82,7 @@
             margin: 15px 0 0;
         }
         .logo{
-            width: 50px;
+            width: 150px;
             display: block;
             margin: auto;
             margin-bottom: 20px;
