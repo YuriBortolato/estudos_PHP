@@ -39,6 +39,13 @@
         <li class="nav-item">
           <a href="../usuario" class="nav-link">Usuarios</a>
         </li>
+        <li class="nav-item">
+          <a href="../dahsboard?logout=true" 
+            onclick='return confirm(\"Deseja sair do sistema?\")' 
+            class="nav-link">
+            Sair
+          </a>
+        </li>
       </ul>
     </div>
   </div>
