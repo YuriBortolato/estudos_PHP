@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/09/2025 às 22:47
+-- Tempo de geração: 18/09/2025 às 19:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `catalogo`
+-- Estrutura para tabela `categoria`
 --
 
-CREATE TABLE `catalogo` (
+CREATE TABLE `categoria` (
   `nome` varchar(255) NOT NULL,
   `descricao` text DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1,
@@ -35,10 +35,10 @@ CREATE TABLE `catalogo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `catalogo`
+-- Despejando dados para a tabela `categoria`
 --
 
-INSERT INTO `catalogo` (`nome`, `descricao`, `status`, `id`) VALUES
+INSERT INTO `categoria` (`nome`, `descricao`, `status`, `id`) VALUES
 ('bebida', 'energetico, isotonico', 1, 1),
 ('carnes', 'carne brancas e vermelhas', 1, 2),
 ('doces', 'chocolate, biscoito', 1, 3);
@@ -123,9 +123,9 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `ativo`) VALUES
 --
 
 --
--- Índices de tabela `catalogo`
+-- Índices de tabela `categoria`
 --
-ALTER TABLE `catalogo`
+ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -151,9 +151,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `catalogo`
+-- AUTO_INCREMENT de tabela `categoria`
 --
-ALTER TABLE `catalogo`
+ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
