@@ -29,15 +29,4 @@
         break;
     }
 
-
-
-    // header('Content-Type: application/json; charset=utf-8');
-
-    // $a = array(
-    //     'nome' => 'Diogo',
-    //     'email' => 'diogo@diogo.com.br'
-    // );
-
-    // echo json_encode($a);
-
 ?>
