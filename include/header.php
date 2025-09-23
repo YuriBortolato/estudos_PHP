@@ -39,7 +39,7 @@
           <a href="../usuario" class="nav-link">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a href="../catalogo" class="nav-link">Catálogos</a>
+          <a href="../categoria" class="nav-link">Categoria</a>
         </li>
         <li class="nav-item">
           <a href="../produto" class="nav-link">Produtos</a>
