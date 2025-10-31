@@ -16,7 +16,7 @@
     @endif
 
     <header class="mb-4">
-        <h1>@yield('header', 'CRUD Laravel')</h1>
+        <h1 class="text-center">@yield('header', 'CRUD Laravel')</h1>
         <hr>
     </header>
 
